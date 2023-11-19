@@ -1,6 +1,14 @@
+"use client";
+import Image from "next/image";
 import React from "react";
-
+import Img from "/public/img/arrow.svg";
 function LeftPanel() {
+  const onHandleClick = () => {
+    const leftPanel = document.querySelector("#html");
+    if (leftPanel) {
+      leftPanel.classList.toggle("panel-opened");
+    }
+  };
   return (
     <div>
       <div className="techwave_fn_leftpanel">
@@ -33,11 +41,31 @@ function LeftPanel() {
               />
             </span>
           </a>
-          <a href="#" className="fn__closer fn__icon_button desktop_closer">
-            <img src="svg/arrow.svg" alt="" className="fn__svg" />
+          <a
+            href="#"
+            className="fn__closer fn__icon_button desktop_closer"
+            onClick={onHandleClick}
+          >
+            <Image
+              src={Img}
+              className="fn__svg"
+              alt=""
+              width={100}
+              height={100}
+            />
           </a>
-          <a href="#" className="fn__closer fn__icon_button mobile_closer">
-            <img src="svg/arrow.svg" alt="" className="fn__svg" />
+          <a
+            href="#"
+            className="fn__closer fn__icon_button mobile_closer"
+            onClick={onHandleClick}
+          >
+            <Image
+              src={Img}
+              className="fn__svg"
+              alt=""
+              width={100}
+              height={100}
+            />
           </a>
         </div>
 

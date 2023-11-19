@@ -7,7 +7,8 @@ import "./css/plugins.css";
 import Head from "next/head";
 import SearchBar from "@/components/Layout/SearchBar";
 import LeftPanel from "@/components/Layout/LeftPanel";
-import Content from "@/components/Utility/COntent";
+import Content from "@/components/Utility/Content";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,12 +21,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" id="html">
       <Head>
         <title>Create Next App</title>
-        <script src="/js/jquery.js" type="text/javascript" />
-        <script src="/js/plugins.js" type="text/javascript" />
-        <script src="/js/init.js" type="text/javascript" />
+       
       </Head>
 
       <body>
@@ -37,14 +36,13 @@ export default function RootLayout({
         <LeftPanel />
         <div className="techwave_fn_wrapper">
           <div className="techwave_fn_wrap">
-            {/* {children} */}
-            <Content/>
+            {children}
+            {/* <Content/> */}
             </div>
         </div>
-        {/* <script type="text/javascript" src="./js/jquery.js"></script>
-        <script type="text/javascript" src="./js/plugins.js"></script>
-        <script type="text/javascript" src="./js/ie8.js"></script>
-        <script type="text/javascript" src="./js/init.js"></script> */}
+        <Script src="/js/jquery.js" type="text/javascript" />
+        <Script src="/js/plugins.js" type="text/javascript" />
+        <Script src="/js/init.js" type="text/javascript" />
       </body>
     </html>
   );
